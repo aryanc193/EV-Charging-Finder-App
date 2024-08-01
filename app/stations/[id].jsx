@@ -80,7 +80,12 @@ const StationsDetail = () => {
         </MapView>
       </View>
       <Text style={styles.label}>Phone:</Text>
-      <Text style={styles.phone}>{stations.phone}</Text>
+      <Text
+        style={styles.phone}
+        onPress={() => Linking.openURL(`tel:${stations.phone}`)}
+      >
+        {stations.phone}
+      </Text>
       <Text style={styles.label}>Website:</Text>
       <Text
         style={styles.website}
