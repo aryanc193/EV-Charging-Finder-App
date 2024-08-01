@@ -145,20 +145,24 @@ const Profile = () => {
               />
             </TouchableOpacity>
 
-            <View className="w-16 h-16 border border-green-500 rounded-lg flex justify-center items-center">
-              <Image
-                source={{ uri: user?.avatar }}
-                className="w-[90%] h-[90%] rounded-lg"
-                resizeMode="cover"
+            <View className="w-full flex flex-row">
+              <View className="w-16 h-16 border border-green-500 rounded-full flex justify-center items-center">
+                <Image
+                  source={{ uri: user?.avatar }}
+                  className="w-[90%] h-[90%] rounded-full"
+                  resizeMode="cover"
+                />
+              </View>
+              <InfoBox
+                title={user?.username}
+                subtitle={user?.email}
+                containerStyles="ml-5"
+                titleStyles="text-lg text-left"
               />
             </View>
-
-            <InfoBox
-              title={user?.username}
-              subtitle={user?.email}
-              containerStyles="mt-5"
-              titleStyles="text-lg"
-            />
+            <Text className="text-white mt-5 -mb-10 text-lg w-full item-left">
+              View your visited stations here:
+            </Text>
           </View>
         )}
       />
